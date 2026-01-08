@@ -1,2 +1,2 @@
 # hypnosis
-A minimal PHP 8+ HTTP framework focused on simplicity, modularity, and Composer-first extensibility.
+A minimal PHP core for HTTP applications, focused on explicit architecture and Composer-first extensibility.
