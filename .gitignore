@@ -1,0 +1,7 @@
+.idea/
+vendor/
+composer.lock
+core/vendor/
+core/composer.lock
+orm/
+public/

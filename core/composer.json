@@ -1,0 +1,48 @@
+{
+    "name": "hypnosis/core",
+    "description": "A minimal PHP core for HTTP applications, focused on explicit architecture and Composer-first extensibility.",
+    "type": "library",
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "Radu Buzea",
+            "email": "radu.buzea@hypnosis.ro",
+            "role": "Author"
+        }
+    ],
+
+    "homepage": "https://hypnosis.ro",
+    "support": {
+        "issues": "https://github.com/radubuzea/hypnosis/issues",
+        "source": "https://github.com/radubuzea/hypnosis"
+    },
+
+    "require": {
+        "php": "^8.2",
+        "psr/http-message": "^2.0",
+        "psr/http-factory": "^1.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Hypnosis\\Core\\": "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "Hypnosis\\Core\\Tests\\": "tests/"
+        }
+    },
+
+    "minimum-stability": "stable",
+
+    "keywords": [
+        "php",
+        "http",
+        "framework-core",
+        "micro-framework",
+        "api"
+    ]
+}
