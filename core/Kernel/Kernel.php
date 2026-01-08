@@ -9,6 +9,7 @@ use Hypnosis\Core\Routing\RouterEngineInterface;
 use Hypnosis\Core\Middleware\MiddlewarePipelineInterface;
 use Hypnosis\Core\Response\ResponseBuilderInterface;
 use Hypnosis\Core\Exception\ExceptionHandlerInterface;
+use Throwable;
 
 final class Kernel
 {
@@ -19,9 +20,8 @@ final class Kernel
 
     /**
      * The Kernel coordinates the HTTP request lifecycle.
-     *
-     * It acts strictly as an orchestrator and must not contain
-     * business logic, response formatting, or emission concerns.
+     * It acts strictly as an orchestrator and must not contain business logic, response formatting,
+     * or emission concerns.
      */
     public function __construct(
         RouterEngineInterface $router,
@@ -37,7 +37,6 @@ final class Kernel
 
     /**
      * Handles an incoming PSR-7 ServerRequest and returns a PSR-7 Response.
-     *
      * This is the single public entry point of the Kernel.
      */
     public function handle(ServerRequestInterface $request): ResponseInterface
@@ -51,7 +50,7 @@ final class Kernel
 
             // Build the final HTTP response from controller data
             return $this->responseBuilder->build($routeResult, $request);
-        } catch (\Throwable $exception) {
+        } catch (Throwable $exception) {
             // Delegate all errors to the centralized exception handler
             return $this->exceptionHandler->handle($exception, $request);
         }
